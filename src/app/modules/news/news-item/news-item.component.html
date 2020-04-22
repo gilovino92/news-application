@@ -1,0 +1,18 @@
+ <div class="news-item" (click)="viewDetail(news)">
+    <div class="thumbnail">
+      <div class="date">
+        <div class="day">{{news.publishedAt |date:'dd'}}</div>
+        <div class="month">{{news.publishedAt |date:'MMM'}}</div>
+      </div>
+      <img class=""[src]="news.urlToImage"/>
+    </div>
+    <div class="news-content">
+      <div class="source">{{news.source?.name || 'Unknown'}}</div>
+      <h4 class="title">{{news.title}}</h4>
+      <h6 class="author">{{news.author}}</h6>
+      <div class="description">
+        <p>{{news.description}}</p>
+      </div>        
+      <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> {{news.publishedAt | date:'long'}}</span></div>
+    </div>
+  </div>

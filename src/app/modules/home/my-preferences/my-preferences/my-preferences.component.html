@@ -1,0 +1,26 @@
+<div class="my-preference">
+    <div class="menu">
+        <h1 class="border-bottom"><strong>Preferences</strong> news</h1>
+    </div>
+    <div class="scroll-area">
+        <div *ngIf="!newsList.length" class="loading-container">
+            <ngx-loading [show]="true" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
+        </div>
+        <ng-container *ngIf="newsList.length">
+            <div class="radio-toolbar">
+                <div *ngFor="let cat of categories">
+                    <input type="radio" name="option" [checked]="myChoice.option === cat.value">
+                    <label (click)="myChange(cat.value)">{{cat.title}}</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 col-md-12" *ngFor="let news of newsList; let i = index">
+                    <app-news-item [news]="news"></app-news-item>
+                </div>
+            </div>
+        </ng-container>
+
+    </div>
+
+</div>

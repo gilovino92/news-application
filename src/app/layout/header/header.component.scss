@@ -1,0 +1,15 @@
+.custom-nav-class {
+    background-color: #D03F2E;
+    z-index: 999999999999999999999999;
+    a {
+        color: #ffffff;
+        &:hover {
+            color: #ffffff;
+            background-color: rgb(212, 90, 76);
+        }
+    }
+    .active>.nav-link {
+        font-weight: 700;
+        color: #ffffff;
+    }
+}

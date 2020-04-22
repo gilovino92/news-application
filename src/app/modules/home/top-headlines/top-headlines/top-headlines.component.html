@@ -1,0 +1,11 @@
+<h1 class="border-bottom"><strong>Breaking</strong> news</h1>
+<div class="row">
+    <div *ngIf="!topHeadlines.length" class="loading-container">
+        <ngx-loading [show]="true" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
+    </div>
+        <div class="col-sm-12 col-md-12" [ngClass]="{'col-lg-6': i != 0, 'col-lg-12': i===0}"
+        *ngFor="let news of topHeadlines; let i = index">
+        <app-news-item [news]="news"></app-news-item>
+    </div>
+    
+</div>

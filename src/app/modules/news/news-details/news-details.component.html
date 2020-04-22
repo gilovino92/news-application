@@ -1,0 +1,19 @@
+<div class="news-detail">
+  <div class="thumbnail">
+    
+    <img class=""[src]="news.urlToImage"/>
+  </div>
+  <div class="news-content">
+    <div class="source">{{news.source?.name || 'Unknown'}}</div>
+    <h4 class="title">{{news.title}}</h4>
+    <h6 class="author">{{news.author}}</h6>
+    <div class="description">
+      <p><i>{{news.description}}</i></p>
+      <div [innerHTML]="news.content | readmore:news.url"></div>
+    </div>        
+    <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> {{news.publishedAt | date:'long'}}</span></div>
+  </div>
+</div>
+<div class="close" (click)="activeModal.close('Close click')">
+  <div>x</div>
+</div>
