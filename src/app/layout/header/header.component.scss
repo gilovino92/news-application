@@ -12,4 +12,23 @@
         font-weight: 700;
         color: #ffffff;
     }
+    ul {
+        margin:0 55px 0px 0px!important;
+        width: 100%;
+        position: relative; 
+    }
+    
+}
+.profile-button {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    .icon {
+        font-size: 20px;
+    }
+}
+.logged {
+    .dropdown-item {
+        color: #D03F2E;
+    }
 }
