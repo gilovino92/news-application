@@ -28,4 +28,8 @@ export class HeaderComponent implements OnInit {
       modalRef.componentInstance.user = this.currentUser;
     }
   }
+  remove() {
+      this.userService.removeUser();
+      this.userService.broadcast(UserService.NEW_USER, true);
+  }
 }

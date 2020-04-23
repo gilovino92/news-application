@@ -1,11 +1,11 @@
-import { EventService } from './../event-service/event.service';
+import { EventService } from "./../event-service/event.service";
 import { Injectable } from "@angular/core";
 import User from "src/app/data/models/user.model";
 
 @Injectable({
   providedIn: "root",
 })
-export class UserService extends EventService{
+export class UserService extends EventService {
   static NEW_USER = "new_user_created";
   get currenUser(): any {
     if (!localStorage.getItem("user")) {
@@ -20,5 +20,9 @@ export class UserService extends EventService{
 
   registerNewUser(userData) {
     localStorage.setItem("user", JSON.stringify(userData));
+  }
+
+  removeUser() {
+    localStorage.removeItem("user");
   }
 }
